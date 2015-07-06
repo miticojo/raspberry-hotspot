@@ -1,0 +1,5 @@
+logging:
+  level: debug
+  path: log/hotspotd.log
+  remote_syslog: null
+
