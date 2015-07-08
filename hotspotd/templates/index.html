@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Hotspot - Register to get Internet Access</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootflat.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body style="background-color: rgb(241, 242, 246);">
+<div class="container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-7">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">HotSpot</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-7">
+                <p class="navbar-text navbar-right">powered by AppToTheCloud</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="row">
+        <div class="col-md-offset-3 col-xs-12 col-md-6 col-md-offset-3">
+            <div class="jumbotron">
+                {% if not register %}
+                <div class="jumbotron-contents">
+                    <h1>Hotspot</h1>
+
+                    <h2>Register for Internet Access</h2>
+
+                    <p>To gain Internet Access through this wireless network, please complete the form below:</p>
+
+                    <form name="register" method="POST" action="/register">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <label>Email</label>
+                                <input type="text" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-md-6 col-xs-12">
+                                <label>Mobile</label>
+                                <input type="text" class="form-control" placeholder="Mobile phone number">
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <label>Device</label>
+                                <input type="text" class="form-control" placeholder="Device" readonly>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-md-6 col-xs-12">
+                                <button type="submit" name="submit" class="btn btn-success" value="Register">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+                <div class="jumbotron-contents">
+                    <h1>Registration Complete</h1>
+
+                    <h2>You're on Internet now, enjoy!</h2>
+
+                    <p>Continue your navigation, changing your browser page.</p>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</body>
+</html>

@@ -57,7 +57,7 @@ if __name__ == "__main__":
                     daemon.restart_daemon()
             elif 'fg' == sys.argv[1]:
                     logger.info("starting Hotspotd in foreground....")
-                    daemon.start()
+                    daemon.start(debug=True)
             else:
                     print "Unknown command"
                     sys.exit(2)
