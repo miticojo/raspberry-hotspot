@@ -3,3 +3,4 @@ logging:
   path: log/hotspotd.log
   remote_syslog: null
 
+max_time_connection: 240
